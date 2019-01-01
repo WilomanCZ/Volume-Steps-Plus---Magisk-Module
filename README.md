@@ -5,7 +5,7 @@
 - Write command: su
 - Write command: VoSte
 - Follow instructions in Therminal loaded script
-- For example edit Media Steps Value: Write su =>VoSte => a => number (your value) =>reboot => done
+- For example edit Media Steps Value: Open Therminal Emulator => write su =>VoSte => a => number (your value) =>reboot => done
 
 ## Description:
 ### Raises the Volume Step counts to:
