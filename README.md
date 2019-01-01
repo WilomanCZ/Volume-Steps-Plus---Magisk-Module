@@ -33,6 +33,8 @@
 - Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
 
 # Changelog:
+## Version 1.2.0
+  - Bugs fixes
 ## Version 1.1.1 - 1.1.2
   - just few little fixes, nothing big
   - edit of module style
