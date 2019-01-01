@@ -1,4 +1,4 @@
-## Volume Steps+ 1.1.2 for Magisk 17.0++
+# Volume Steps+ 1.1.2 for Magisk 17.0++
 
 ## Requirements
   -Magisk 17.0 or higer
@@ -26,11 +26,11 @@ Raises the Volume Step counts to
 - Xperia XZ Oreo Stock ROM - with Magisk 17.3
 - Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
 
-## Changelog:
-# * Version 1.0.0
+# Changelog:
+## * Version 1.0.0
   - *Initial Release 1.0(0)
 
-# * Version 1.1.1 - 1.1.2
+## * Version 1.1.1 - 1.1.2
   - *just few little fixes, nothing big
   - *edit of module style
   - *added selection: q - for Exit
