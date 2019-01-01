@@ -6,8 +6,8 @@
 
 # Default Variables
 div="=================================";
-MODDIR="/sbin/.magisk/img/VolumeSteps+";
-MODDIR2="/sbin/.magisk/img/VolumeSteps+/system/xbin";
+MODDIR="/sbin/.magisk/img/VolumeStepsPlus";
+MODDIR2=$MODDIR/system/xbin;
 prop=$MODDIR/system.prop;
 
 # Functions
