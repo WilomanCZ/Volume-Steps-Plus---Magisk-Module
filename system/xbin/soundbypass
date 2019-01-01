@@ -6,7 +6,7 @@
 
 # Default Variables
 div="=================================";
-MODDIR="/sbin/.magisk/img/VolumeSteps+";
+MODDIR="/sbin/.magisk/img/VolumeStepsPlus";
 prop=$MODDIR/system.prop;
 
 #Functions
@@ -66,7 +66,7 @@ datasend="audio.safemedia.bypass";
 
  if [ "$text" == "1" ] ; then
         data="true";
-        set_file_prop $datasend ${data} $prop;
+        set_file_prop ${datasend} ${data} $prop;
         echo "Changed to $data";
         sleep 2;
         echo "Reboot device for apply changes.";
