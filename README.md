@@ -12,8 +12,8 @@
 - In Call Volume:	10 (callsteps) 
 - Media Volume:		25 (mediasteps)
 - Set Safe Media Bypass to True 
-- You can change all these values in Terminal by command: VoSte
-- Terminal Comman is: VoSte
+- You can change all these values in Terminal with command: VoSte
+- Terminal Command is: VoSte
 
 ### After install will module add systemlessly these Values to the build.prop (but you can change it later) :
 - ro.config.vc_call_vol_steps=10
