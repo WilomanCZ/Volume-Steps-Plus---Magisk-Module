@@ -1,29 +1,28 @@
-# Volume Steps Plus 1.2.0 for Magisk 17.0++
+# Volume Steps+ 1.2.0 for Magisk 17.0++
 
-## How to use:
+ ## How to use:
 - Open Therminal Emulator App in your phone
 - Write command: su
 - Write command: VoSte
-- Follow instructions in Therminal loaded script 
-
-## Requirements:
-- Magisk 17.0 or higer
-- If module do not work for you try install - BusyBox Magisk Module
-
+- Follow instructions in Therminal loaded script
+- For example edit Media Steps Value: Write su =>VoSte => a => number (your value) =>reboot => done
 
 ## Description:
 ### Raises the Volume Step counts to:
 - In Call Volume:	10 (callsteps) 
 - Media Volume:		25 (mediasteps)
 - Set Safe Media Bypass to True 
-- You can change these values in Terminal by my scripts
+- You can change all these values in Terminal by command: VoSte
 - Terminal Comman is: VoSte
 
-
-## After install will module add these Values to the build.prop (but you can change it later) :
+### After install will module add systemlessly these Values to the build.prop (but you can change it later) :
 - ro.config.vc_call_vol_steps=10
 - ro.config.media_vol_steps=25
 - audio.safemedia.bypass=true
+
+## Requirements:
+- Magisk 17.0 or higer
+- If module do not work for you try install - BusyBox Magisk Module
 
 ## Warning:
 - Maybe Won't work on Samsung Stock ROMs!!
@@ -34,7 +33,9 @@
 
 # Changelog:
 ## Version 1.2.0
-  - Bugs fixes
+  - bug fixes
+  - compatibility for Magisk GitHub Repo
+
 ## Version 1.1.1 - 1.1.2
   - just few little fixes, nothing big
   - edit of module style
