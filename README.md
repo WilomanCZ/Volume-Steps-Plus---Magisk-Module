@@ -2,8 +2,9 @@
 
 ## How to use:
 - Open Terminal Emulator App
-- write command: su
+- Write command: su
 - Write command: VoSte
+- Follow instructions in Therminal loaded script 
 
 ## Requirements:
 - Magisk 17.0 or higer
