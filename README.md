@@ -1,19 +1,19 @@
-# Volume Steps+ 1.2.0 for Magisk 17.0++
+# Volume Steps+ 1.2.5 for Magisk 17.0++
 
  ## How to use:
 - Open Therminal Emulator App in your phone
 - Write command: su
 - Write command: VoSte
 - Follow instructions in Therminal loaded script
-- For example edit Media Steps Value: Open Therminal Emulator => write su =>VoSte => a => number (your value) =>reboot => done
+- For example edit Media Steps Value: Write su =>VoSte => a => number (your value) =>reboot => done
 
 ## Description:
 ### Raises the Volume Step counts to:
 - In Call Volume:	10 (callsteps) 
 - Media Volume:		25 (mediasteps)
 - Set Safe Media Bypass to True 
-- You can change all these values in Terminal with command: VoSte
-- Terminal Command is: VoSte
+- You can change all these values in Terminal by command: VoSte
+- Terminal Comman is: VoSte
 
 ### After install will module add systemlessly these Values to the build.prop (but you can change it later) :
 - ro.config.vc_call_vol_steps=10
@@ -32,7 +32,7 @@
 - Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
 
 # Changelog:
-## Version 1.2.0
+## Version 1.2.0 - 1.2.5
   - bug fixes
   - compatibility for Magisk GitHub Repo
 
