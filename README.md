@@ -1,5 +1,10 @@
 # Volume Steps Plus 1.2.0 for Magisk 17.0++
 
+## How to use:
+- Open Terminal Emulator App
+- write command: su
+- Write command: VoSte
+
 ## Requirements:
 - Magisk 17.0 or higer
 - If module do not work for you try install - BusyBox Magisk Module
