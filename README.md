@@ -1,7 +1,7 @@
 # Volume Steps Plus 1.2.0 for Magisk 17.0++
 
 ## How to use:
-- Open Terminal Emulator App
+- Open Therminal Emulator App in your phone
 - Write command: su
 - Write command: VoSte
 - Follow instructions in Therminal loaded script 
