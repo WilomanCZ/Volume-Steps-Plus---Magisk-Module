@@ -1,7 +1,7 @@
 id=VolumeStepsPlus
 name=Volume Steps Plus
 version=1.3
-versionCode=0
+versionCode=9
 author=WilomanCZ (Remake from: byveez21)
 description=Increase the Step Count for Media Volume and In-Call Volume on almost all deices with Magisk 17.0++ Terminal command is frst write- su -and after:                                                                                VoSte
 minMagisk=17000
