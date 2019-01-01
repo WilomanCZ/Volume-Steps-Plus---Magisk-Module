@@ -1,4 +1,4 @@
-# Volume Steps+ 1.2.5 for Magisk 17.0++
+# Volume Steps+ 1.3.0 for Magisk 17.0++
 
  ## How to use:
 - Open Therminal Emulator App in your phone
@@ -32,6 +32,11 @@
 - Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
 
 # Changelog:
+## Version 1.3.0
+  - module code optimalization and fixes
+  - support reboot from module
+  - to select in menu you have multiple options for one function ect-1/a/A for media volume steps
+
 ## Version 1.2.0 - 1.2.5
   - bug fixes
   - compatibility for Magisk GitHub Repo
