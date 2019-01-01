@@ -1,4 +1,4 @@
-# Volume Steps+ 1.1.2 for Magisk 17.0++
+# Volume Steps Plus 1.2.0 for Magisk 17.0++
 
 ## Requirements:
 - Magisk 17.0 or higer
