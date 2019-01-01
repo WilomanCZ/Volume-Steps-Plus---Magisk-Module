@@ -1,0 +1,116 @@
+#!/system/bin/sh
+# Volume Steps+ for Magisk 17+
+# Original source by: veez21 @xda-developers 
+# Remake and Upgrade by: WilomanCZ
+
+
+# Default Variables
+div="=================================";
+MODDIR="/sbin/.magisk/img/VolumeStepsPlus";
+MODDIR2=$MODDIR/system/xbin;
+scfile=$MODDIR2/soundbypass;
+prop=$MODDIR/system.prop;
+
+#Functions
+get_file_prop() {
+_prop=$2
+_prop=$(grep "$1=" $_prop)
+val=${_prop#*=}
+echo $val
+unset _prop
+}
+
+set_file_prop() {
+_prop=$3
+sed -i "s/${1}=.*/${1}=${2}/g" $_prop
+unset _prop
+}
+
+
+# Extra Variables
+VER=$(get_file_prop version $MODDIR/module.prop);
+REL=$(get_file_prop versionCode $MODDIR/module.prop);
+AUT=$(get_file_prop author $MODDIR/module.prop);
+NAM=$(get_file_prop name $MODDIR/module.prop);
+SCRN="Safe Media Bypass";
+
+ok="0";
+data="null";
+datasend="audio.safemedia.bypass";
+
+# Main
+clear;
+
+current=$(getprop audio.safemedia.bypass);
+applied=$(get_file_prop audio.safemedia.bypass $prop);
+
+echo $div;
+echo "$SCRN -  ${NAM}";
+echo $div;
+echo "";
+echo "Version ${VER}.${REL}";
+echo "Author: ${AUT}";
+echo "";
+echo "Change Value of $SCRN";
+echo "- Write number     1    For: On (True)";
+echo "- Write number     0   For: Off (False)";
+echo $div;
+echo "";
+echo $div;
+echo "Current: $current";
+
+if [ "$current" != "$applied" ]; then
+	echo "To be applied: $applied" ;
+	echo "NOTE: REBOOT TO APPLY CHANGES";
+fi
+
+echo $div;
+echo "";
+echo -n "Select option by menu text (q for exit):";
+read text
+
+if [ "$text" == "q" ] || [ "$text" == "Q" ]; then
+clear;
+	echo "Exit";
+	sleep 1;
+	exit;
+fi
+
+if [ "$text" == "1" ]; then
+data="true";
+elif [ "$text" == "0" ]; then
+data="false";
+fi
+
+if [ "$data" == "$applied" ]; then
+  echo "Already entered! Try it again.";
+  sleep 2;
+  sh $scfile;
+  exit;
+
+ elif [ "$text" == "1" ]; then
+        set_file_prop ${datasend} ${data} $prop;
+        echo "Changed to $data";
+        ok="1";       
+elif [ "$text" == "0" ]; then
+        set_file_prop ${datasend} ${data} $prop;
+        echo "Changed to $data";
+        ok="1";
+ else
+        echo "Only numbers 1 or 0 nothing else!!! Try it again.";
+        sleep 2;
+        sh $scfile;
+        exit;
+        fi
+   
+if [ "$ok" == "1" ]; then
+     sleep 1;
+        echo "Reboot device for apply changes.";
+        echo -n "Do you want reboot device now? (y/n)  or empty is NO:" ;
+	read reb
+	   if [ "$reb" == "y" ] || [ "$reb" == "Y" ]; then
+	reboot;
+	  elif [ "$reb" == "" ] || [ "$reb" == "n" ] || [ "$reb" == "N" ]; then
+	exit ;
+	 fi
+fi 
