@@ -15,23 +15,23 @@ Raises the Volume Step counts to
 
 
 ## After install will module add these Values to the build.prop (but you can change it later) :
-ro.config.vc_call_vol_steps=10
-ro.config.media_vol_steps=25
-audio.safemedia.bypass=true
+- ro.config.vc_call_vol_steps=10
+- ro.config.media_vol_steps=25
+- audio.safemedia.bypass=true
 
 ## Warning:
-Maybe Won't work on Samsung Stock ROMs!!
+- Maybe Won't work on Samsung Stock ROMs!!
 
 ## Tested and working on:
- Xperia XZ Oreo Stock ROM - with Magisk 17.3
- Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
+- Xperia XZ Oreo Stock ROM - with Magisk 17.3
+- Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
 
 ## Changelog:
-Version 1.0.0
-  *Initial Release 1.0(0)
+# * Version 1.0.0
+  - *Initial Release 1.0(0)
 
-Version 1.1.1 - 1.1.2
-  *just few little fixes, nothing big
-  *edit of module style
-  *added selection: q - for Exit
-  *fixed use instructions
+# * Version 1.1.1 - 1.1.2
+  - *just few little fixes, nothing big
+  - *edit of module style
+  - *added selection: q - for Exit
+  - *fixed use instructions
