@@ -1,12 +1,12 @@
 # Volume Steps+ 1.1.2 for Magisk 17.0++
 
 ## Requirements
-  -Magisk 17.0 or higer
-  -if module do not work for you try install - BusyBox Magisk Module
+- Magisk 17.0 or higer
+- If module do not work for you try install - BusyBox Magisk Module
 
 
 ## Description
-Raises the Volume Step counts to
+### Raises the Volume Step counts to
 - In Call Volume:	10 (callsteps) 
 - Media Volume:		25 (mediasteps)
 - Set Safe Media Bypass to True 
