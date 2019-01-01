@@ -1,0 +1,95 @@
+#!/system/bin/sh
+# Volume Steps+ for Magisk 17+
+# Original source by: veez21 @xda-developers 2017
+# Remake and Upgrade by: WilomanCZ 2018
+
+
+# Default Variables
+div="=================================";
+MODDIR="/sbin/.magisk/img/VolumeStepsPlus";
+MODDIR2=$MODDIR/system/xbin;
+prop=$MODDIR/system.prop;
+
+# Functions
+get_file_prop() {
+_prop=$2
+_prop=$(grep "$1=" $_prop)
+val=${_prop#*=}
+echo $val
+unset _prop
+}
+set_file_prop() {
+_prop=$3
+sed -i "s/${1}=.*/${1}=${2}/g" $_prop
+unset _prop
+}
+
+# Extra Variables
+VER=$(get_file_prop version $MODDIR/module.prop);
+REL=$(get_file_prop versionCode $MODDIR/module.prop);
+AUT=$(get_file_prop author $MODDIR/module.prop);
+NAM=$(get_file_prop name $MODDIR/module.prop);
+
+clear;
+
+echo $div;
+echo "${NAM} menu   -   Version: ${VER}.${REL}";
+echo "Author: $AUT";
+echo $div;
+echo "";
+
+echo "Choose function to edit: ";
+echo $div;
+
+echo "a    Media-Volume Steps Count CONFIG";
+echo "b    Call-Volume Steps Count CONFIG ";
+echo "c    Safe Media ByPass CONFIG";
+echo "q    For EXIT";
+
+echo "";
+
+echo -n "Write selection  (a,b,c or q):";
+read selection
+
+if ["$(echo $selection | tr -d 'a')" == ""]; then
+clear;
+  SCRN="Media-Volume Steps";
+  scfile=$MODDIR2/mediasteps;
+  echo "You choosed:  ${SCRN}";
+  sleep 2;
+  sh $scfile;
+
+elif ["$(echo $selection | tr -d 'b')" == ""]; then
+clear;
+  SCRN="Call-Volume Steps":
+  scfile=$MODDIR2/callsteps;
+  echo "You choosed:  ${SCRN}";
+  sleep 2;
+  sh $scfile;
+
+elif ["$(echo $selection | tr -d 'c')" == ""]; then
+clear;
+  SCRN="Safe Media ByPass";
+  scfile=$MODDIR2/soundbypass;
+  echo "You choosed:  ${SCRN}";
+  sleep 2;
+  sh $scfile;
+
+elif ["$(echo $selection | tr -d 'q')" == ""]; then
+clear;
+  SCRN="Exit";
+  echo "You choosed:  ${SCRN}";
+  sleep 4;
+  exit;
+
+else
+clear;
+scfile=$MODDIR2/VoSte;
+       echo "You Choosed: ${selection}";
+       echo "This is not correct selection.";
+       echo "You can choose only: a,b,c or q.";
+       sleep 5;
+       clear;
+       sh $scfile;
+       exit;
+fi
