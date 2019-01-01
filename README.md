@@ -6,7 +6,7 @@
 
 
 ## Description:
-### Raises the Volume Step counts to
+### Raises the Volume Step counts to:
 - In Call Volume:	10 (callsteps) 
 - Media Volume:		25 (mediasteps)
 - Set Safe Media Bypass to True 
@@ -27,11 +27,11 @@
 - Xperia Z5 Compact LineAgeOS 14.1 - with Magisk 18.0
 
 # Changelog:
-## * Version 1.0.0
-  - *Initial Release 1.0(0)
+## Version 1.1.1 - 1.1.2
+  - just few little fixes, nothing big
+  - edit of module style
+  - added selection: q - for Exit
+  - fixed use instructions
 
-## * Version 1.1.1 - 1.1.2
-  - *just few little fixes, nothing big
-  - *edit of module style
-  - *added selection: q - for Exit
-  - *fixed use instructions
+## Version 1.0.0
+  - Initial Release 1.0(0)
