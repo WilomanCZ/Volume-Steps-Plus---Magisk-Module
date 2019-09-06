@@ -3,55 +3,34 @@
 # Magisk Module Installer Script
 #
 ##########################################################################################
-##########################################################################################
-#
-# Instructions:
-#
-# 1. Place your files into system folder (delete the placeholder file)
-# 2. Fill in your module's info into module.prop
-# 3. Configure and implement callbacks in this file
-# 4. If you need boot scripts, add them into common/post-fs-data.sh or common/service.sh
-# 5. Add your additional or modified system properties into common/system.prop
-#
-##########################################################################################
 
 ##########################################################################################
 # Config Flags
 ##########################################################################################
 
-# Set to true if you do *NOT* want Magisk to mount
-# any files for you. Most modules would NOT want
-# to set this flag to true
 SKIPMOUNT=false
-
-# Set to true if you need to load system.prop
 PROPFILE=true
-
-# Set to true if you need post-fs-data script
-POSTFSDATA=false
-
-# Set to true if you need late_start service script
-LATESTARTSERVICE=false
+POSTFSDATA=true
+LATESTARTSERVICE=true
 
 ##########################################################################################
 # Replace list
 ##########################################################################################
 
-# List all directories you want to directly replace in the system
-# Check the documentations for more info why you would need this
-
-# Construct your list in the following format
-# This is an example
-REPLACE_EXAMPLE="
-/system/app/Youtube
-/system/priv-app/SystemUI
-/system/priv-app/Settings
-/system/framework
-"
-
-# Construct your own list here
 REPLACE="
 "
+
+##########################################################################################
+# Permissions
+##########################################################################################
+
+set_permissions() {
+	set_perm_recursive $MODPATH 0 0 0755 0644
+	set_perm $MODPATH/system/$BIN/VoSte 0 0 0755
+	set_perm $MODPATH/system/$BIN/callsteps 0 0 0755
+	set_perm $MODPATH/system/$BIN/mediasteps 0 0 0755
+	set_perm $MODPATH/system/$BIN/soundbypass 0 0 0755
+}
 
 ##########################################################################################
 #
@@ -123,7 +102,7 @@ REPLACE="
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "Volume Steps+ for Magisk 17.0++"
+  ui_print "Volume Steps+ for Magisk 19.0+ "
   ui_print "*******************************"
   ui_print ""
   ui_print "Commands in Terminal for change values is:"
@@ -134,46 +113,16 @@ print_modname() {
   ui_print "*******************************"
 }
 
-# Copy/extract your module files into $MODPATH in on_install.
+	# Check Magisk version
+	if [ $MAGISK_VER_CODE -lt 19000 ]; then
+		ui_print ""
+		log_print "! Detected Magisk build $MAGISK_VER_CODE!"
+		log_print "! Magisk version not supported!"
+		abort "! Please install Magisk v19+!"
+	fi
+}
 
 on_install() {
-  # The following is the default implementation: extract $ZIPFILE/system to $MODPATH
-  # Extend/change the logic to whatever you want
-
-  BINARY_PATH=$TMPDIR/binary/VoSte
-
-  CONFIG_PATH=$TMPDIR/config
-
-  ui_print "+ Extracting package contents..."
-
-  ui_print "+ Extracting VoSte to $MODPATH/VoSte"
-  unzip -p "$ZIPFILE" binary/VoSte > $MODPATH/VoSte
-  ui_print "+ Extracting callsteps to $MODPATH/callsteps"
-  unzip -p "$ZIPFILE" binary/callsteps > $MODPATH/callsteps
-  ui_print "+ Extracting mediasteps to $MODPATH/mediasteps"
-  unzip -p "$ZIPFILE" binary/mediasteps > $MODPATH/mediasteps
-  ui_print "+ Extracting soundbypass to $MODPATH/soundbypass"
-  unzip -p "$ZIPFILE" binary/soundbypass > $MODPATH/soundbypass
+	ui_print "- Extracting module files"
+	unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
 }
-
-# Only some special files require specific permissions
-# This function will be called after on_install is done
-# The default permissions should be good enough for most cases
-
-
-set_permissions() {
-  # The following is the default rule, DO NOT remove
-  set_perm_recursive $MODPATH 0 0 0755 0644
-  set_perm $MODPATH/VoSte 0 0 0755
-  set_perm $MODPATH/callsteps 0 0 0755
-  set_perm $MODPATH/mediasteps 0 0 0755
-  set_perm $MODPATH/soundbypass 0 0 0500
-  
-  # Here are some examples:
-  # set_perm_recursive  $MODPATH/system/lib       0     0       0755      0644
-  # set_perm  $MODPATH/system/bin/app_process32   0     2000    0755      u:object_r:zygote_exec:s0
-  # set_perm  $MODPATH/system/bin/dex2oat         0     2000    0755      u:object_r:dex2oat_exec:s0
-  # set_perm  $MODPATH/system/lib/libart.so       0     0       0644
-}
-
-# You can add more functions to assist your custom script code
