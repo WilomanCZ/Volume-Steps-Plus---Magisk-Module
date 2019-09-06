@@ -115,5 +115,5 @@ print_modname() {
 
 on_install() {
 	ui_print "- Extracting module files"
-	unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
+	unzip -o "$ZIPFILE" 'system/*' -d $MODPATH
 }
